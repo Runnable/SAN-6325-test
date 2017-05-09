@@ -1,7 +1,9 @@
 FROM busybox:latest
 
+RUN ln -s /bin/bash /bin/sh
+
 RUN mkdir /www
-RUN echo "test 1" >> /www/index.html
+RUN echo "test-2-branch" >> /www/index.html
 
 CMD httpd -p 80 -h /www -f
 
