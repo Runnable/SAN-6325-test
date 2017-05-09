@@ -1,0 +1,7 @@
+FROM busybox:latest
+
+RUN mkdir /www
+RUN echo "test 1" >> /www/index.html
+
+CMD httpd -p 80 -h /www -f
+
