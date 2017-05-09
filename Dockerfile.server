@@ -1,9 +1,9 @@
 FROM progrium/busybox
 
-RUN opkg-install bash
+RUN opkg-install bash uhttpd-mod-lua
 
 RUN mkdir /www
 RUN echo "test master" >> /www/index.html
 
-CMD httpd -p 80 -h /www -f
+CMD uhttpd -p 80 -h /www -f
 
