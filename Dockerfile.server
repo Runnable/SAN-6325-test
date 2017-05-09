@@ -1,9 +1,9 @@
-FROM busybox:latest
+FROM progrium/busybox
 
-RUN ln -s /bin/sh /bin/bash
+RUN opkg-install bash
 
 RUN mkdir /www
-RUN echo "test-2-branch" >> /www/index.html
+RUN echo "test master" >> /www/index.html
 
 CMD httpd -p 80 -h /www -f
 
