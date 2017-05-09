@@ -1,0 +1,6 @@
+FROM busybox:latests
+
+RUN echo "test 1" >> /www/index.html
+
+CMD /usr/sbin/httpd -p 80 -h /www
+
