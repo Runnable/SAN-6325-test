@@ -1,6 +1,6 @@
 FROM busybox:latest
 
-RUN ln -s /bin/bash /bin/sh
+RUN ln -s /bin/sh /bin/bash
 
 RUN mkdir /www
 RUN echo "test-2-branch" >> /www/index.html
