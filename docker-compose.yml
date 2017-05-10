@@ -13,3 +13,6 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.server
+
+  github:
+    build: https://github.com/Runnable/SAN-6325-test
