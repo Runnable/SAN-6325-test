@@ -1,7 +1,21 @@
 version: '2'
 services:
-  busybox:
-    image: busybox:latest
+  main:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.client
+    links:
+      - server
+    depends_on:
+      - server
+
+  server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.server
+
+  github:
+    build: https://github.com/Runnable/SAN-6325-test
 
   server:
     build:
