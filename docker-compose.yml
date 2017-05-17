@@ -1,18 +1,6 @@
 version: '2'
 services:
-  client:
+  main: # One service with build with the same service name must be kept
     build:
       context: .
-      dockerfile: ./Dockerfile.client
-    links:
-      - server
-    depends_on:
-      - server
-
-  server:
-    build:
-      context: .
-      dockerfile: ./Dockerfile.server
-
-  github:
-    build: https://github.com/Runnable/SAN-6325-test
+      dockerfile: ./Dockerfile.busybox
