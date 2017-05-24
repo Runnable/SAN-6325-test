@@ -4,3 +4,8 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.busybox
+
+  ecr:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.ecr
