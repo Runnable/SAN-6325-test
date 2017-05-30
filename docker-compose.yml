@@ -15,4 +15,4 @@ services:
       dockerfile: ./Dockerfile
 
   github:
-    build: https://github.com/Runnable/SAN-6325-test#f6deac0b9d7251ecb0a341ba92d5beb8a0bec733
+    build: https://github.com/Runnable/SAN-6325-test#test
