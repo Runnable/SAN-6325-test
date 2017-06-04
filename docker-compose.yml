@@ -8,17 +8,17 @@ services:
   level-3:
     build:
       context: ./level-1/level-2/level-3
-      dockerfile: ../../Dockerfile.busybox
+      dockerfile: ./level-1/Dockerfile.busybox
 
   level-2:
     build:
       context: ./level-1/level-2/
-      dockerfile: ../Dockerfile.busybox
+      dockerfile: ./level-1/Dockerfile.busybox
 
   level-1:
     build:
       context: ./level-1/
-      dockerfile: ./Dockerfile.busybox
+      dockerfile: ./level-1/Dockerfile.busybox
 
   level-0:
     build:
