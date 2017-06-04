@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: ./Dockerfile.busybox
 
-  ecr:
+  github-http:
     build:
-      context: .
+      context: git@github.com:Runnable/SAN-6325-test.git
       dockerfile: ./Dockerfile.ecr
