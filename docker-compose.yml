@@ -6,9 +6,7 @@ services:
       dockerfile: ./Dockerfile.busybox
 
   ecr:
-    build:
-      context: .
-      dockerfile: ./docker-file-that-doesnt-exist
+    image: wowowwowowowwowowow
 
   redis:
     image: redis
