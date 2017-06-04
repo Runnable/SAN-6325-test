@@ -7,7 +7,7 @@ services:
 
   github-3:
     build:
-      context: git@github.com:Runnabtle/SAN-6325-test.git#gihtub-repo-test
+      context: git@github.com:Runnabtle/SAN-6325-test.git#branch-that-doesnt-exist
       dockerfile: ./Dockerfile.client
     command: "echo github-git try 15"
 
