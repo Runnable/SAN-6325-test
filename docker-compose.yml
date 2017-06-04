@@ -5,7 +5,14 @@ services:
       context: .
       dockerfile: ./Dockerfile.busybox
 
-  github-http:
+  github-git:
     build:
       context: git@github.com:Runnable/SAN-6325-test.git
-      dockerfile: ./Dockerfile.ecr
+      dockerfile: ./Dockerfile.client
+    command: "echo github-git"
+
+  github-http:
+    build:
+      context: https://github.com/Runnable/SAN-6325-test.git
+      dockerfile: ./Dockerfile.server
+    command: "echo github-http"
