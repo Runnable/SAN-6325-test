@@ -5,8 +5,8 @@ services:
       context: .
       dockerfile: ./Dockerfile.busybox
 
-  ecr:
-    image: wowowwowowowwowowow
+  ecr_hello:
+    image: rethinkdb
 
   redis:
     image: redis
