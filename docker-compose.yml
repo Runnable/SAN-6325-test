@@ -1,26 +1,25 @@
 version: '2'
 services:
   main: # One service with build with the same service name must be kept
-    build:
-      context: .
-      dockerfile: ./Dockerfile.busybox
+    image: busybox:latest
+    command: "echo MAIN"
 
   level-3:
     build:
       context: ./level-1/level-2/level-3
-      dockerfile: ./level-1/Dockerfile.busybox
+      dockerfile: ./Dockerfile.busybox
 
   level-2:
     build:
       context: ./level-1/level-2/
-      dockerfile: ./level-1/Dockerfile.busybox
+      dockerfile: ./level-3/Dockerfile.busybox
 
   level-1:
     build:
       context: ./level-1/
-      dockerfile: ./level-1/Dockerfile.busybox
+      dockerfile: ./level-2/level-3/Dockerfile.busybox
 
   level-0:
     build:
       context: ./
-      dockerfile: ./level-1/Dockerfile.busybox
+      dockerfile: ./level-1/level-2/level-3/Dockerfile.busybox
