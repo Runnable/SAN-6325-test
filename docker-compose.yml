@@ -7,12 +7,12 @@ services:
 
   github-git:
     build:
-      context: git@github.com:Runnable/SAN-6325-test.git
+      context: git@github.com:Runnable/SAN-6325-test.git#gihtub-repo-test
       dockerfile: ./Dockerfile.server
-    command: "echo github-git try 10"
+    command: "echo github-git try 11"
 
   github-http:
     build:
       context: https://github.com/CodeNow/big-poppa.git
       dockerfile: ./Dockerfile_test
-    command: "echo github-http try 10"
+    command: "echo github-http try 11"

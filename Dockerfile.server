@@ -3,7 +3,10 @@ FROM progrium/busybox
 RUN opkg-install bash uhttpd-mod-lua
 
 RUN mkdir /www
+RUN sleep 20
 RUN echo "test master" >> /www/index.html
+RUN echo "test 1" >> /www/index.html
+RUN echo "test 2" >> /www/index.html
 
 EXPOSE 80
 
