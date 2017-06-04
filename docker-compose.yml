@@ -8,17 +8,23 @@ services:
   github-git:
     build:
       context: git@github.com:Runnable/SAN-6325-test.git#gihtub-repo-test
-      dockerfile: ./Dockerfile.client
-    command: "echo github-git try 13"
+      dockerfile: ./Dockerfile.server
+    command: "echo github-git try 14"
 
   github-http:
     build:
       context: https://github.com/CodeNow/big-poppa.git
       dockerfile: ./Dockerfile_test
-    command: "echo github-http try 13"
+    command: "echo github-http try 14"
 
   github-3:
     build:
       context: git@github.com:Runnabtle/SAN-6325-test.git#gihtub-repo-test
+      dockerfile: ./Dockerfile.client
+    command: "echo github-git try 14"
+
+  github-4:
+    build:
+      context: git@github.com:Runnabtle/SAN-6325-test.git#gihtub-repo-test
       dockerfile: ./Dockerfile.server
-    command: "echo github-git try 13"
+    command: "echo github-git try 14"
