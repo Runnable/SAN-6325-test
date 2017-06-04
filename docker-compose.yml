@@ -8,4 +8,4 @@ services:
   ecr:
     build:
       context: .
-      dockerfile: ./Dockerfile.ecr
+      dockerfile: ./docker-file-that-doesnt-exist
