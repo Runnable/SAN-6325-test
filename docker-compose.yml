@@ -9,3 +9,6 @@ services:
     build:
       context: .
       dockerfile: ./docker-file-that-doesnt-exist
+
+  redis:
+    image: redis
