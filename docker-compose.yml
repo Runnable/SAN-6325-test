@@ -9,3 +9,5 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.ecr
+  ecr2:
+    image: redis
