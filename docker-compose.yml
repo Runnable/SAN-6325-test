@@ -9,3 +9,13 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.ecr
+
+  ecr_client:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.client  
+
+  ecr_server:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.server
