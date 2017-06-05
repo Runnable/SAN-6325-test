@@ -10,3 +10,8 @@ services:
       context: .
       dockerfile: ./Dockerfile.ecr
 
+  ecr3:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.client
+
