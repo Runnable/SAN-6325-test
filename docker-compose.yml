@@ -4,8 +4,13 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.busybox
-
-  ecr:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: some_password123
+  ecr_:
     build:
       context: .
       dockerfile: ./Dockerfile.ecr
