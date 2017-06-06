@@ -5,7 +5,21 @@ services:
       context: .
       dockerfile: ./Dockerfile.busybox
 
-  ecr:
+  server:
     build:
       context: .
-      dockerfile: ./Dockerfile.ecr
+      dockerfile: ./Dockerfile.server
+
+  client:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.client
+
+  --rethinkdb:
+    image: rethinkdb:latest
+
+  99mongo:
+    image: mongo:latest
+
+  pgsql:
+    image: postgres:latest
