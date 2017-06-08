@@ -9,3 +9,6 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.ecr
+
+  ecr2:
+    image: 437258487404.dkr.ecr.us-west-2.amazonaws.com/kube-nginx-letsencrypt:hello2
