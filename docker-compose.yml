@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.busybox
+    command: sleep 99999999
     environment:
       - SERVICE_IGNORE=1
       - HOSTNAME=main
