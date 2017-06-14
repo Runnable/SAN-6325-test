@@ -3,9 +3,13 @@ services:
   main: # One service with build with the same service name must be kept
     build:
       context: .
-      dockerfile: ./Dockerfile.busybox
+      dockerfile: ./Dockerfile.server
 
   ecr:
     build:
       context: .
-      dockerfile: ./Dockerfile.ecr
+      dockerfile: ./Dockerfile.client
+    links:
+    - main:consul.zd-dev.com
+    env:
+    - HOST=consul.zd-dev.com
