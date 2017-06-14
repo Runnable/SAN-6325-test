@@ -9,6 +9,7 @@ services:
     hostname: consul.docker
     image: consul:0.7.5
     command: consul agent -config-dir /consul/data -dc dev1 -server -ui -bootstrap-expect 1 -client 0.0.0.0
+    command: sleep 9999
     environment:
       - SERVICE_IGNORE=1
       - ZENDESK_PORT=
