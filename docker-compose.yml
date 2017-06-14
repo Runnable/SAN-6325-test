@@ -4,6 +4,9 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.busybox
+    environment:
+      - SERVICE_IGNORE=1
+      - HOSTNAME=main
 
   consul:
     hostname: consul.docker
