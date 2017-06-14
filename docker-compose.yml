@@ -5,7 +5,31 @@ services:
       context: .
       dockerfile: ./Dockerfile.busybox
 
-  ecr:
-    build:
-      context: .
-      dockerfile: ./Dockerfile.ecr
+  consul:
+    hostname: consul.docker
+    image: consul:0.7.5
+    command: agent -config-dir /consul/data -dc dev1 -server -ui -bootstrap-expect 1 -client 0.0.0.0
+    volumes:
+      - consul-data:/consul/data
+    links:
+      - memcached
+      - pravada
+    networks:
+      internal:
+        aliases:
+          # This hack is needed for pravda
+          - consul.zd-dev.com
+        ipv4_address: 172.2.1.253
+    environment:
+      - SERVICE_IGNORE=1
+      - ZENDESK_PORT=
+      - ZENDESK_HOST=zd-dev.com
+      - CONSUL_HTTP_ADDR=http://consul:8500
+      - ZENDESK_ON_SSL=true
+      - DOCKER=true
+      - RAILS_CACHE_CLASSES=true
+      - PROJECT=consul
+      - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - CONSUL_VERSION=0.7.5
+      - DOCKER_BASE_VERSION=0.0.4
+      - HASHICORP_RELEASES=https://releases.hashicorp.com
