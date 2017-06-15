@@ -28,5 +28,7 @@ services:
       - HASHICORP_RELEASES=https://releases.hashicorp.com
 
   memcached:
-    build: ./Dockerfile.memcached
+    build:
+      context: .
+      dockerfild: ./Dockerfile.memcached
 
