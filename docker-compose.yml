@@ -30,5 +30,5 @@ services:
   memcached:
     build:
       context: .
-      dockerfild: ./Dockerfile.memcached
+      dockerfile: ./Dockerfile.memcached
 
