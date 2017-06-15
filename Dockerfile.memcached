@@ -1,0 +1,5 @@
+FROM memcached:1.4.37
+
+RUN apt-update && apt-get -y install curl
+
+CMD ["source", "register_to_consul.bash"]

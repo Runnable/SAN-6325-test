@@ -27,11 +27,6 @@ services:
       - DOCKER_BASE_VERSION=0.0.4
       - HASHICORP_RELEASES=https://releases.hashicorp.com
 
-  registrator:
-    hostname: registrator.docker
-    image: gliderlabs/registrator:v7
-    command: registrator -internal consul://consul:8500
-    links:
-      - consul
-    depends_on:
-      - consul
+  memcached:
+    build: ./Dockerfile.memcached
+
