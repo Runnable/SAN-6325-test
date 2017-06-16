@@ -1,13 +1,14 @@
 version: '2'
 services:
-  main: # One service with build with the same service name must be kept
+  main:
     build:
       context: .
-      dockerfile: ./Dockerfile.busybox
-    command: sleep 99999999
+      dockerfile: ./Dockerfile.python
+    links:
+    - consul
+    - memcached
     environment:
-      - SERVICE_IGNORE=1
-      - HOSTNAME=main
+    - CONSUL_HOST=consul
 
   consul:
     image: consul:0.7.5
