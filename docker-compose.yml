@@ -10,25 +10,20 @@ services:
       - HOSTNAME=main
 
   consul:
-    hostname: consul.docker
     image: consul:0.7.5
     command: consul agent -bind 127.0.0.1 -config-dir /consul/data -dc dev1 -server -ui -bootstrap-expect 1 -client 0.0.0.0 -data-dir /consul/data
+    ports:
+     - "8300:8300"
+     - "8400:8400"
+     - "8500:8500"
     environment:
-      - SERVICE_IGNORE=1
-      - ZENDESK_PORT=
-      - ZENDESK_HOST=zd-dev.com
       - CONSUL_HTTP_ADDR=http://consul:8500
-      - ZENDESK_ON_SSL=true
-      - DOCKER=true
-      - RAILS_CACHE_CLASSES=true
-      - PROJECT=consul
-      - PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       - CONSUL_VERSION=0.7.5
-      - DOCKER_BASE_VERSION=0.0.4
-      - HASHICORP_RELEASES=https://releases.hashicorp.com
 
   memcached:
     build:
       context: .
       dockerfile: ./Dockerfile.memcached
-
+    command: memcached
+    ports:
+      - "11211:11211"
