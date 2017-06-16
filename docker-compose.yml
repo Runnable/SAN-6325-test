@@ -24,6 +24,6 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.memcached
-    command: memcached
+    command: bash register_to_consul.bash
     ports:
       - "11211:11211"
