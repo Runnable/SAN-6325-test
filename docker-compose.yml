@@ -25,5 +25,7 @@ services:
       context: .
       dockerfile: ./Dockerfile.memcached
     command: bash register_to_consul.bash
+    links:
+    - consul
     ports:
       - "11211:11211"
