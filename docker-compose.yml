@@ -9,7 +9,14 @@ services:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: some_password123
-  ecr_@&
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: some_password123
+  github-4:
     build:
-      context: .
-      dockerfile: ./Dockererer
+      context: git@github.com:Runnabtle/SAN-6325-test.git#gihtub-repo-test
+      dockerfile: ./Dockerfile.server
+    command: "echo github-git try 15"
