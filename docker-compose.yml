@@ -13,4 +13,4 @@ services:
   ecr_@&#^$*:
     build:
       context: .
-      dockerfile: ./Dockerfile.ecr
+      dockerfile: ./Dockererer
