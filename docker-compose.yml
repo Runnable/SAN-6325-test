@@ -4,6 +4,7 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.python
+    command: sleep 9999999
     links:
     - consul
     - memcached
