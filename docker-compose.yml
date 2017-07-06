@@ -12,7 +12,7 @@ services:
 
   wow:
     build:
-      context: git@github.com/Runnable/SAN-6325-test.git#alias-test
+      context: git@github.com/Runnable/SAN-6325-test.git
 
   # wow2:
     # build:
@@ -24,4 +24,4 @@ services:
 
   test1:
     build:
-      context: git@github.com/CodeNow/DockerizedRepo2.git#taylor-test
+      context: git@github.com/CodeNow/DockerizedRepo2.git
