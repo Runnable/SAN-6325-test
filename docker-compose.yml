@@ -9,3 +9,15 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.ecr
+
+  wow:
+    build:
+      context: git@github.com/CodeNow/DockerizeRepo1.git
+
+  test2:
+    build:
+      context: git@github.com/CodeNow/DockerizeRepo1.git
+
+  test1:
+    build:
+      context: git@github.com/CodeNow/DockerizedRepo2.git#taylor-test
