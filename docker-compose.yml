@@ -9,7 +9,8 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile.client
+    command: sleep 99999
     links:
     - main:consul.zd-dev.com
-    env:
+    environment:
     - HOST=consul.zd-dev.com
