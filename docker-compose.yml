@@ -1,9 +1,14 @@
 version: '2'
 services:
-  main: # One service with build with the same service name must be kept
+  main3000: # One service with build with the same service name must be kept
     build:
       context: .
       dockerfile: ./Dockerfile.server
+
+  main80:
+    build:
+      context: .
+      dockerfile: ./Dockerfile.server2
 
   ecr:
     build:
@@ -11,6 +16,7 @@ services:
       dockerfile: ./Dockerfile.client
     command: sleep 99999
     links:
-    - main:consul.zd-dev.com
+    - main80:consul.zd-dev.com
+    - main3000
     environment:
     - HOST=consul.zd-dev.com

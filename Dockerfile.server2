@@ -1,0 +1,10 @@
+FROM progrium/busybox
+
+RUN opkg-install bash uhttpd-mod-lua
+
+RUN mkdir /www
+RUN echo "test master" >> /www/index.html
+
+EXPOSE 80
+
+CMD uhttpd -p 80 -h /www -f
